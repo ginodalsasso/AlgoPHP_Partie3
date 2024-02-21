@@ -46,11 +46,13 @@ class Auteur{
 
 
     public function bibliographie(){
-        echo "Bibliographie de $this:</br>";
+        $result = "<h1>Bibliographie de $this:</h1><ul>";
 
         foreach ($this->livres as $livre){
-            $result = $livre->getInfos() ."</br>";
+            $result .= "<li>$livre</li>";
         }
+
+        $result .= "</ul>";
     
         return $result;
     }

@@ -12,9 +12,9 @@ $livre3 = new Livre ("Da Vinci Code", "475", "2008", 17, $auteur1);
 $livre4 = new Livre ("Forteresse digitale", "620", "2000", 15, $auteur1);
 
 
-$livre1->getInfos();
+// $livre1->getInfos();
 
 echo "</br>";
 
 echo $auteur1->bibliographie();
-echo $auteur1-> calculPrix();
+// echo $auteur1-> calculPrix();

@@ -3,12 +3,12 @@
 class Livre{
 
     private string $titre;
-    private string $nbPages;
+    private int $nbPages;
     private DateTime $parution;
     private float $prix;
     private Auteur $auteur;
 
-    public function __construct(string $titre, string $nbPages, string $parution, float $prix, Auteur $auteur){
+    public function __construct(string $titre, int $nbPages, string $parution, float $prix, Auteur $auteur){
         $this->titre = $titre;
         $this->nbPages = $nbPages;
         $this->parution = new DateTime($parution);
@@ -33,7 +33,7 @@ class Livre{
     }
 
 
-    public function getNbPages(): string
+    public function getNbPages(): int
     {
         return $this->nbPages;
     }
@@ -80,16 +80,14 @@ class Livre{
         return $this;
     }
 
-        //////////////////getters and setters///////////////////
+     //////////////////getters and setters///////////////////
+    public function getInfos (){
+        echo "Titre du livre :" . $this . "</br>";
+        echo "Nombre de pages : {$this->getNbPages()} </br>";
+        echo "Prix : {$this->getPrix()} </br>";
+    }
 
-
-        public function getInfos (){
-            echo "Titre du livre :" . $this . "</br>";
-            echo "Nombre de pages : {$this->getNbPages()} </br>";
-            echo "Prix : {$this->getPrix()} </br>";
-        }
-
-        public function __toString(){
-            return $this->titre ." ". $this->getParution()->format("Y");
-        }
+    public function __toString(){
+        return $this->titre ." ". $this->getParution()->format("Y")." ".$this->getNbPages()." ".$this->getPrix()." €";
+    }
 }

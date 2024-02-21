@@ -103,8 +103,8 @@ class CompteBancaire {
 
     public function effectuerVirement(CompteBancaire $compteDestination, float $montant) {
         if ($montant > 0) {
-            $this->soldeInitial -= $montant;
-            $compteDestination->soldeInitial += $montant;
+            $this->debiter($montant);
+            $compteDestination->crediter($montant);
             echo "Virement de $montant {$this->devise} effectué </br>";
         } else {
             echo "Le montant à transférer doit être positif ! </br>";

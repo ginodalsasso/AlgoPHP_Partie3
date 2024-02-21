@@ -13,6 +13,7 @@ class Titulaire{
         $this->prenom = $prenom;
         $this->dateDeNaissance = $dateDeNaissance;
         $this->ville = $ville;
+        $this->comptes = [];
     }
 
 
@@ -84,15 +85,17 @@ class Titulaire{
     // affiche toutes les informations du titulaire
     public function afficherInformations() {
         $age = $this->calculerAge();
-        echo "$this<br/>";
-        echo "Date de naissance: $this->dateDeNaissance<br/>";
-        echo "Âge: $age ans<br/>";
-        echo "Ville: $this->ville<br/>";
-        echo "<br/>";
-        echo "Comptes bancaires:<br/>";
+        $result = "$this<br/>";
+        $result .= "Date de naissance: $this->dateDeNaissance<br/>";
+        $result .= "Âge: $age ans<br/>";
+        $result .= "Ville: $this->ville<br/>";
+        $result .= "<br/>";
+        $result .= "Comptes bancaires:<br/>";
         foreach ($this->comptes as $compte) {
-            $compte->afficherInformations();
+            $result .= $compte->afficherInformations();
         }
+
+        return $result;
     }
 
 
