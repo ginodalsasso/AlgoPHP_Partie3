@@ -2,16 +2,14 @@
 
 class Casting{
 
- 
     private Film $film;
-    private Acteur $acteurs;
-    private Role $roles;
-
+    private Acteur $acteur;
+    private Role $role;
     
-    public function __construct(Film $film, Acteur $acteurs, Role $roles){
+    public function __construct(Film $film, Acteur $acteur, Role $role){
         $this->film = $film;
-        $this->acteur = $acteurs;
-        $this->role = $roles;
+        $this->acteur = $acteur;
+        $this->role = $role;
         $film->addCasting($this);  //ajoute un casting à l'objet film
         $acteur->addCasting($this);  //ajoute un acteur à l'objet film
         $role->addCasting($this);  //ajoute un role à l'objet film
@@ -33,31 +31,29 @@ class Casting{
     }
 
  
-    public function getActeurs()
+    public function getActeur()
     {
-        return $this->acteurs;
+        return $this->acteur;
     }
 
 
-    public function setActeurs($acteurs)
+    public function setActeur($acteur)
     {
-        $this->acteurs = $acteurs;
+        $this->acteur = $acteur;
 
         return $this;
     }
 
  
-    public function getRoles()
+    public function getRole()
     {
-        return $this->roles;
+        return $this->role;
     }
 
-    public function setRoles($roles)
+    public function setRole($role)
     {
-        $this->roles = $roles;
+        $this->role = $role;
 
         return $this;
     }
-
-////////////////////////////////////////////////////////////
 }

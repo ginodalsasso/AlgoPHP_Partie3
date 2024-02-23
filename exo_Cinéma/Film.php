@@ -105,11 +105,34 @@ class Film {
 
 ////////////////////////////////////////////////////////////
 
+//  CASTING //
 
     public function addCasting(Casting $casting) {
-        $this->castings[] = $casting;
+        $this->casting[] = $casting;
     }
 
+    public function afficherCasting() {                 //nous affichera le casting
+        $result = "<h2>Casting de $this</h2><ul>";
+
+        foreach($this->casting as $cast) {
+            $result .= "<li>".$cast->getActeur()." ".$cast->getRole()."</li>";  //va chercher dans l'objet casting l'acteur et son role
+        }
+
+        $result .= "</ul>";
+        return $result;
+    }
+
+    public function afficherInfos() {           //nous affichera toutes les infos du film y compris le casting
+        $result = "<h1>$this</h1>";
+        $result .= "<b>Durée :</b> ". $this->duree." min<br>";
+        $result .= "<b>Réalisateur :</b> ". $this->realisateur."<br>";
+        $result .= "<b>Genre : </b>". $this->genre."<br>";
+        $result .= $this->afficherCasting();
+        return $result;
+    }
+
+
+//  ROLE //
 
     public function __toString(){
         return $this->titreFilm ." ". $this->getParution()->format("Y");

@@ -55,6 +55,10 @@ class Genre {
         }
         return $result;
     }
+
+    public function __toString() {
+        return $this->nomDuGenre;
+    }
 }
 
 

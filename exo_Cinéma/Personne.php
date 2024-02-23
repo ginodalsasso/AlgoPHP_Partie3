@@ -15,9 +15,7 @@ class  Personne  {
         $this->dateNaissance = new DateTime ($dateNaissance);
     }
 
-
 //////////////////getters and setters///////////////////
-
 
     public function getPrenom()
     {
