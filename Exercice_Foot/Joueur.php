@@ -6,7 +6,7 @@ class Joueur{
     private string $nom;
     private DateTime $dateNaissance;
     private Pays $pays;
-    private array $contrat;
+    private array $contrats;
 
 
     public function __construct (string $prenom, string $nom, string $dateNaissance, Pays $pays){
@@ -73,14 +73,14 @@ class Joueur{
     }
 
 
-    public function getContrat()
+    public function getContrats()
     {
-        return $this->contrat;
+        return $this->contrats;
     }
 
-    public function setContrat($contrat)
+    public function setContrats($contrats)
     {
-        $this->contrat = $contrat;
+        $this->contrats = $contrats;
 
         return $this;
     }
@@ -96,7 +96,7 @@ class Joueur{
         $result = "<h2>Carrière de $this</h2><ul>";
 
             foreach($this->contrats as $contrat) {
-        $result .= "<li>" .$contrat->getClub()."</li>";        //va chercher dans l'objet contrat les club
+        $result .= "<li>" .$contrat->getClubs()."</li>";        //va chercher dans l'objet contrat les club
         }
         $result .= "</ul>";
         return $result;
@@ -120,5 +120,4 @@ class Joueur{
     public function __toString(){
         return  $this->prenom ." ". $this->nom;
     }
-
 }

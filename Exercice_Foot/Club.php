@@ -2,12 +2,12 @@
 
 class Club{
 
-    private string $nomClub;
+    private string $club;
     private Pays $pays;
-    private array $contrat;
+    private array $contrats;
 
-    public function __construct(string $nomClub, Pays $pays){
-        $this->nomClub = $nomClub;
+    public function __construct(string $club, Pays $pays){
+        $this->club = $club;
         $this->pays = $pays;
         $this->contrats = [];
         $this->pays->addClub($this);
@@ -16,14 +16,14 @@ class Club{
 
 /////////////////////////////////////////////////////////////
 
-    public function getNomClub()
+    public function getClub()
     {
-        return $this->nomClub;
+        return $this->club;
     }
 
-    public function setNomClub($nomClub)
+    public function setClub($club)
     {
-        $this->nomClub = $nomClub;
+        $this->club = $club;
 
         return $this;
     }
@@ -40,14 +40,15 @@ class Club{
         return $this;
     }
 
-    public function getContrat()
+
+    public function getContrats()
     {
-        return $this->contrat;
+        return $this->contrats;
     }
 
-    public function setContrat($contrat)
+    public function setContrats($contrats)
     {
-        $this->contrat = $contrat;
+        $this->contrats = $contrats;
 
         return $this;
     }
@@ -62,15 +63,14 @@ class Club{
         $result = "<h2>$this</h2><ul>";
 
             foreach($this->contrats as $contrat) {
-        $result .= "<li>" .$contrat->getJoueur()."</li>";        //va chercher dans l'objet contrat les joueurs
+        $result .= "<li>" .$contrat->getJoueur() ." ". $contrat->getDebutSaison() ."</li>";        //va chercher dans l'objet contrat les joueurs
         }
         $result .= "</ul>";
         return $result;
     }
 
     public function __toString(){
-        return  $this->nomClub;
+        return  $this->club;
     }
-
 
 }

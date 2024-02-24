@@ -2,61 +2,60 @@
 
 class Pays{
 
-    private string $nomPays;
-    private array $club;
-    private array $joueur;
+    private string $pays;
+    private array $clubs;
+    private array $joueurs;
 
-    public function __construct(string $nomPays){
-        $this->nomPays = $nomPays;
+    public function __construct(string $pays){
+        $this->pays = $pays;
         $this->clubs = [];
         $this->joueurs = [];
-        // $this->club->addClub($this)
     }
 
     
     /////////////////////////////////////////////////////////////
 
-    public function getNomPays()
+    public function getPays()
     {
-        return $this->nomPays;
+        return $this->pays;
     }
 
-    public function setNomPays($nomPays)
+    public function setPays($pays)
     {
-        $this->nomPays = $nomPays;
+        $this->pays = $pays;
 
         return $this;
     }
 
- 
-    public function getClub()
+    
+    public function getClubs()
     {
-        return $this->club;
+        return $this->clubs;
     }
 
-    public function setClub($club)
+    public function setClubs($clubs)
     {
-        $this->club = $club;
+        $this->clubs = $clubs;
 
         return $this;
     }
 
 
-    public function getJoueur()
+    public function getJoueurs()
     {
-        return $this->joueur;
+        return $this->joueurs;
     }
 
-    public function setJoueur($joueur)
+    public function setJoueurs($joueurs)
     {
-        $this->joueur = $joueur;
+        $this->joueurs = $joueurs;
 
         return $this;
     }
 
 /////////////////////////////////////////////////////////////
 
-public function addClubs(Club $club) {
+public function addClub(Club $club) {
     $this->clubs[] = $club;
 }
 
@@ -65,7 +64,7 @@ public function afficherClubs() {                 //nous affichera les clubs de 
     $result = "<h2>$this</h2><ul>";
 
         foreach($this->clubs as $club) {
-    $result .= "<li>" .$club->getClub()."</li>";        //va chercher dans l'objet club dans pays
+    $result .= "<li>" .$club->getClub(). "</li>";        //va chercher dans l'objet club dans pays
     }
     $result .= "</ul>";
     return $result;
@@ -76,10 +75,6 @@ public function addJoueur(Joueur $joueur) {
     $this->joueurs[] = $joueur;
 }
 
-public function afficherPays(){
-    $result = $this;
-    $result .= $this -> afficherClub();
-}
 
 
 // public function afficherJoueurs() {                 //nous affichera les joueurs chaque pays, n'est pas demandé dans l'exercice
@@ -94,7 +89,9 @@ public function afficherPays(){
 
 
 
-public function __toString(){
-    return $this->$nomPays;
+    public function __toString(){
+        return $this->pays;
+    }
 }
-}
+
+
