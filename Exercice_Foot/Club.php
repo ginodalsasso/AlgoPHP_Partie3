@@ -10,6 +10,7 @@ class Club{
         $this->nomClub = $nomClub;
         $this->pays = $pays;
         $this->contrats = [];
+        $this->pays->addClub($this);
     }
 
 

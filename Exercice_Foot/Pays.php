@@ -10,6 +10,7 @@ class Pays{
         $this->nomPays = $nomPays;
         $this->clubs = [];
         $this->joueurs = [];
+        // $this->club->addClub($this)
     }
 
     
@@ -73,6 +74,11 @@ public function afficherClubs() {                 //nous affichera les clubs de 
 
 public function addJoueur(Joueur $joueur) {
     $this->joueurs[] = $joueur;
+}
+
+public function afficherPays(){
+    $result = $this;
+    $result .= $this -> afficherClub();
 }
 
 

@@ -11,8 +11,8 @@ class Contrat{
         $this->joueur = $joueur;
         $this->club = $club;
         $this->debutSaison = $debutSaison;
-        $club->addClub($this);
-        $joueur->addJoueur($this);
+        $this->club->addContrat($this);
+        $this->joueur->addContrat($this);
     }
 
 /////////////////////////////////////////////////////////////

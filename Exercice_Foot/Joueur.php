@@ -5,17 +5,17 @@ class Joueur{
     private string $prenom;
     private string $nom;
     private DateTime $dateNaissance;
-    private Pays $nationalite;
+    private Pays $pays;
     private array $contrat;
 
 
-    public function __construct (string $prenom, string $nom, string $dateNaissance, Pays $nationalite){
+    public function __construct (string $prenom, string $nom, string $dateNaissance, Pays $pays){
         $this->prenom = $prenom;
         $this->nom = $nom;
         $this->dateNaissance = new DateTime ($dateNaissance);
-        $this->nationalite = $nationalite;
+        $this->pays = $pays;
         $this->contrats = [];
-        $nationalite->addPays($this);
+        $this->pays->addJoueur($this);
     }
 
 
@@ -60,14 +60,14 @@ class Joueur{
     }
 
 
-    public function getNationalite()
+    public function getPays()
     {
-        return $this->nationalite;
+        return $this->pays;
     }
  
-    public function setNationalite($nationalite)
+    public function setPays($pays)
     {
-        $this->nationalite = $nationalite;
+        $this->pays = $pays;
 
         return $this;
     }
