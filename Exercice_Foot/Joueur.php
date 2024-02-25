@@ -93,29 +93,24 @@ class Joueur{
 
 
     public function afficherContratsJoueur() {                 //nous affichera les contrats de chaque Joueurs
+        $age = $this->calculerAge();
         $result = "<h2>Carrière de $this</h2><ul>";
-
+        $result .= $this->pays ." - ". $this->calculerAge() ." ans";
             foreach($this->contrats as $contrat) {
-        $result .= "<li>" .$contrat->getClubs()."</li>";        //va chercher dans l'objet contrat les club
+        $result .= "<li>" .$contrat->getClub() . "(" .$contrat->getDebutSaison() .") </li>";        //va chercher dans l'objet contrat les club et les debuts de saison (instance $joueur1 par ex)
         }
         $result .= "</ul>";
         return $result;
     }
 
-
+    
     // calcul de l'âge
-    public function calculerAge(): int {
-        $dateNaissance = new DateTime($this->dateNaissance);
+    public function calculerAge() {
+        $dateNaissance = $this->dateNaissance;
         $aujourdHui = new DateTime();
         $difference = $dateNaissance->diff($aujourdHui);
         return $difference->y;
     }
-
-    // function public getInfos(){
-//////////////////PREVOIR LES GETINFOS
-    //     return $result
-    // }
-
 
     public function __toString(){
         return  $this->prenom ." ". $this->nom;

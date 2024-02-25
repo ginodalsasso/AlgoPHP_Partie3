@@ -38,3 +38,16 @@ echo $pays1 -> afficherClubs();
 echo $pays2 -> afficherClubs();
 echo $pays5 -> afficherClubs();
 echo $pays4 -> afficherClubs();
+
+
+echo $club1 -> afficherContratsClub();
+echo $club2 -> afficherContratsClub();
+echo $club3 -> afficherContratsClub();
+echo $club5 -> afficherContratsClub();
+echo $club6 -> afficherContratsClub();
+
+
+echo $joueur1 -> afficherContratsJoueur();
+echo $joueur2 -> afficherContratsJoueur();
+echo $joueur3 -> afficherContratsJoueur();
+echo $joueur4 -> afficherContratsJoueur();

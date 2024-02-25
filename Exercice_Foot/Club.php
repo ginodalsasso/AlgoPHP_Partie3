@@ -63,7 +63,7 @@ class Club{
         $result = "<h2>$this</h2><ul>";
 
             foreach($this->contrats as $contrat) {
-        $result .= "<li>" .$contrat->getJoueur() ." ". $contrat->getDebutSaison() ."</li>";        //va chercher dans l'objet contrat les joueurs
+        $result .= "<li>" .$contrat->getJoueur() ." ". $contrat->getDebutSaison() ."</li>";        //va chercher dans l'objet contrat les joueurs et leurs débuts de saison
         }
         $result .= "</ul>";
         return $result;

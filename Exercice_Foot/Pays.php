@@ -55,25 +55,25 @@ class Pays{
 
 /////////////////////////////////////////////////////////////
 
-public function addClub(Club $club) {
-    $this->clubs[] = $club;
-}
-
-
-public function afficherClubs() {                 //nous affichera les clubs de chaque pays
-    $result = "<h2>$this</h2><ul>";
-
-        foreach($this->clubs as $club) {
-    $result .= "<li>" .$club->getClub(). "</li>";        //va chercher dans l'objet club dans pays
+    public function addClub(Club $club) {
+        $this->clubs[] = $club;
     }
-    $result .= "</ul>";
-    return $result;
-}
 
 
-public function addJoueur(Joueur $joueur) {
-    $this->joueurs[] = $joueur;
-}
+    public function afficherClubs() {                 //nous affichera les clubs de chaque pays
+        $result = "<h2>$this</h2><ul>";
+
+            foreach($this->clubs as $club) {
+        $result .= "<li>" .$club->getClub(). "</li>";        //affichera les clubs de chaque pays instanciés
+            }
+        $result .= "</ul>";
+        return $result;
+    }
+
+
+    public function addJoueur(Joueur $joueur) {
+        $this->joueurs[] = $joueur;
+    }
 
 
 
@@ -86,8 +86,6 @@ public function addJoueur(Joueur $joueur) {
 //     $result .= "</ul>";
 //     return $result;
 // }
-
-
 
     public function __toString(){
         return $this->pays;
